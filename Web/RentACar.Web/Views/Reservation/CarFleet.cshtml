@@ -1,34 +1,34 @@
 ﻿@model RentACar.Web.ViewModels.Reservation.ReservationInputModel
 
-<form method="post" class="col-md-4 >
-    <div asp-validation-summary="All" class="form-control">
-        <div>
-            <div class="form-group">
-                <label asp-for="UserName"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
+<form method="post" class="col-md-4">
 
-            <div class="form-group">
-                <label asp-for="CarId"></label>
-                <select class="form-control" asp-for="CarId" asp-items="Model.Cars"></select>
-                <option value="">Pick one</option>
-                <span asp-validation-for="CarId" class="text-danger"></span>
-            </div>
+    <div asp-validation-summary="All">
 
-            <div class="form-group">
-                <label asp-for="StartDate"></label>
-                <input asp-for="StartDate" class="form-control" />
-                <span asp-validation-for="StartDate" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="EndDate"></label>
-                <input asp-for="EndDate" class="form-control" />
-                <span asp-validation-for="EndDate" class="text-danger"></span>
-            </div>
-
+        <div class="form-group">
+            <label asp-for="UserName"></label>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
-    </div>
 
+        <div class="form-group">
+            <label asp-for="CarId"></label>
+            <select class="form-control" asp-for="CarId" asp-items="Model.Cars"></select>
+            <option value="">Pick one</option>
+            <span asp-validation-for="CarId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="StartDate"></label>
+            <input asp-for="StartDate" class="form-control" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EndDate"></label>
+            <input asp-for="EndDate" class="form-control" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+        </div>
+
+        <input type="submit" class="btn btn-primary">
+    </div>
 </form>

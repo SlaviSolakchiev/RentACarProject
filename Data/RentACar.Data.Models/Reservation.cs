@@ -11,6 +11,11 @@
 
     public class Reservation : BaseDeletableModel<string>
     {
+        public Reservation()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         [ForeignKey("Car")]
         public string CarId { get; set; }
 

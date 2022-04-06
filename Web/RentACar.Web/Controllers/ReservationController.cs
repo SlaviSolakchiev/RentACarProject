@@ -9,10 +9,12 @@
     public class ReservationController : BaseController
     {
         private readonly IGetCarsService carsServise;
+        private readonly IDeletableEntityRepository<Reservation> reservationRepository;
 
-        public ReservationController(IGetCarsService carsServise)
+        public ReservationController(IGetCarsService carsServise, IDeletableEntityRepository<Reservation> reservationRepository)
         {
             this.carsServise = carsServise;
+            this.reservationRepository = reservationRepository;
         }
 
         public IActionResult CarFleet()
@@ -31,7 +33,12 @@
                 return this.View(input);
             }
 
-            // TODO: Redirect to recipe info page
+            this.reservationRepository.AddAsync(new Reservation
+            {
+                StartDate = input.StartDate,
+                EndDate = input.EndDate,
+                CarId = input.CarId,
+            });
             return this.Redirect("/");
         }
     }
