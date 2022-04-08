@@ -9,11 +9,18 @@
 
     public class ReservationInputModel
     {
+        private readonly ApplicationUser user;
+
+        public ReservationInputModel(ApplicationUser user)
+        {
+            this.user = user;
+        }
+
         public string CarId { get; set; }
 
         [Required]
         [MinLength(3)]
-        public string UserName { get; set; }
+        public string UserName => this.user.UserName;
 
         public DateTime StartDate { get; set; }
 

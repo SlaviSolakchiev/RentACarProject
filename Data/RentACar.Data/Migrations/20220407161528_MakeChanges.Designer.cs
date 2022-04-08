@@ -12,8 +12,8 @@ using RentACar.Data;
 namespace RentACar.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220406111522_AddNewUserNameProperty")]
-    partial class AddNewUserNameProperty
+    [Migration("20220407161528_MakeChanges")]
+    partial class MakeChanges
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
